@@ -24,13 +24,6 @@ export const appConfig: ApplicationConfig = {
       messagingSenderId: "",
       appId: "",
       measurementId: ""
-      // apiKey: "AIzaSyCPiQFy_7oasFykcjAkwezx0hL7GTmhDO4",
-      // authDomain: "onchurch-dev.firebaseapp.com",
-      // projectId: "onchurch-dev",
-      // storageBucket: "onchurch-dev.appspot.com",
-      // messagingSenderId: "139031853564",
-      // appId: "1:139031853564:web:6fab2f46821fd463855a79",
-      // measurementId: "G-T2JKSTK64V"
     })),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
