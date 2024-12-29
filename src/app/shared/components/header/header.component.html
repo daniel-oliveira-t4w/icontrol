@@ -1,0 +1,30 @@
+<header class="container-header">
+  @if(useDefaultHeader) {
+    <div rightSide class="title-goal">
+      <ng-lottie
+        [height]="'50px'"
+        [width]="'50px'"
+        [options]="{path: '/animations/avatar_dog.json'}"
+      />
+
+      <span class="welcome-user">
+        <small>Bem vindo,</small>
+        <strong class="welcome-user-name">{{authService.currentUserSignal()?.name}}</strong>
+      </span>
+    </div>
+
+    <mat-icon
+      (click)="logout()"
+      leftSide
+      matRipple
+      [matRippleCentered]="true"
+      [matRippleUnbounded]="true"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="logout">
+    </mat-icon>
+  } @else {
+    <ng-content select="[rightSide]"></ng-content>
+    <ng-content select="[leftSide]"></ng-content>
+  }
+</header>

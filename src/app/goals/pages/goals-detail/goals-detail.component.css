@@ -1,0 +1,31 @@
+.example-tab-icon {
+  margin-right: 8px;
+}
+
+.title-goal {
+  display: flex;
+  align-items: center;
+}
+
+.list-step {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.detail-goal {
+  padding: 10px;
+}
+
+.list-step-title {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  border-bottom: 1px solid #333;
+}
+
+.button-finish-goal {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+}

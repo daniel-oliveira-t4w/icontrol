@@ -1,0 +1,42 @@
+.container-goals-list {
+  padding: 15px;
+}
+
+.title-goal {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.container-no-goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+  color: #555;
+}
+
+.title-no-goal {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+mat-icon {
+  margin-right: 5px;
+}
+
+.button-new-goal {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+}
+
+.subtitle-goal {
+  font-size: 15px;
+  margin-top: 5px;
+  color: #333;
+  font-weight: 500;
+}

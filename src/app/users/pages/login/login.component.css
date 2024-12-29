@@ -1,0 +1,27 @@
+.container-login {
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.title-login {
+  font-weight: lighter;
+  text-align: center;
+}
+
+.container-new-account {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.link-create-account {
+  color: #005cbb;
+  font-weight: bold;
+  margin-left: 7px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}

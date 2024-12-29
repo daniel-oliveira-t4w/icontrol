@@ -1,0 +1,56 @@
+<section>
+  <app-header>
+    <span rightSide (click)="goToGoalList()" class="title-goal">
+      <mat-icon class="example-tab-icon">arrow_back</mat-icon>
+      Nova Meta
+    </span>
+  </app-header>
+
+  @if(created) {
+    <ng-lottie
+      [height]="'200px'"
+      [options]="{path: '/animations/success.json', loop: false}"
+    />
+  } @else {
+    <form  class="container-create-goal" [formGroup]="formGoal">
+      <mat-form-field class="w-100">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="w-100" >
+        <mat-label>Data para Conclusão</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="completionDate">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="step-goal">
+        <mat-form-field class="w-100 mr-1">
+          <mat-label>Etapas</mat-label>
+          <input matInput [(ngModel)]="step" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+        <button (click)="addStep()" mat-mini-fab aria-label="Example icon button with a menu icon">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      @for(item of stepList; track item) {
+        <li class="step-list-item">
+          <mat-icon class="mr-1">check_box_outline_blank</mat-icon>
+          {{item}}
+        </li>
+      }
+
+      <button [disabled]="formGoal.invalid" (click)="createGoal()" class="w-100 mt-1" mat-flat-button>Criar Meta</button>
+    </form>
+  }
+
+
+</section>

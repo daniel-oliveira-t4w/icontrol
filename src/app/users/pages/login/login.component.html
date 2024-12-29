@@ -1,0 +1,37 @@
+<section class="container-login">
+  <ng-lottie
+    [height]="'200px'"
+    [options]="{ path: '/animations/login.json'}"
+  />
+
+  <h6 class="title-login">Alcance suas metas, controle suas finanças.</h6>
+
+  <form class="mt-1" [formGroup]="userLoginForm">
+    <mat-form-field class="w-100">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      @if (userLoginForm.get('email')?.hasError('email') && !userLoginForm.get('email')?.hasError('required')) {
+        <mat-error>Informe um email Válido</mat-error>
+      }
+      @if (userLoginForm.get('email')?.hasError('required')) {
+        <mat-error>Email é <strong>obrigatório</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Senha</mat-label>
+      <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" >
+      <mat-icon (click)="showPassword = !showPassword" matSuffix>{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      @if (userLoginForm.get('password')?.hasError('required')) {
+        <mat-error>Senha é <strong>obrigatório</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <button [disabled]="userLoginForm.invalid" (click)="login()" class="w-100 mt-1" mat-flat-button>Login</button>
+
+    <div class="container-new-account">
+      <span>Não possui conta?</span>
+      <a [routerLink]="['/users/create']" routerLinkActive="router-link-active"  class="link-create-account">Registrar-se</a>
+    </div>
+  </form>
+</section>

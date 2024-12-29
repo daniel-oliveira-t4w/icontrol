@@ -1,0 +1,21 @@
+.container-register {
+  padding: 15px;
+}
+
+.title-create{
+  font-weight: lighter;
+  text-align: center;
+}
+
+.container-action-login{
+  margin-top: 15px;
+  text-align: center;
+}
+
+.link-create-account {
+  color: #005cbb;
+  font-weight: bold;
+  margin-left: 7px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
