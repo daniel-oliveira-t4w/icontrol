@@ -1,0 +1,43 @@
+mat-card{
+  margin-bottom: 20px;
+}
+
+.title-goal {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin-right: 5px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.card-goal-action {
+  margin-top: 8px;
+  display: flex;
+}
+
+.card-status-goal {
+  display: flex;
+  align-items: center;
+}
+
+
+.card-status-finished {
+  background-color: #25ae25a6 !important;
+}
+
+.card-status-not-finished {
+  background-color: orange  !important;
+}
+
+.card-status-text {
+
+  font-weight: bold;
+}

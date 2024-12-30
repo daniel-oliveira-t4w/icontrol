@@ -1,0 +1,33 @@
+.container-bottom-navigation {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #eee;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 12;
+}
+
+.block-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  flex: 1;
+}
+
+mat-icon {
+  font-size: 28px;
+}
+
+.text-item {
+  margin-top: -5px;
+}
+
+.active  {
+  font-weight: bold;
+  font-size: 18px;
+  background: #3333331c;
+}

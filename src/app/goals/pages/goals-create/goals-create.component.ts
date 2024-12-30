@@ -16,6 +16,7 @@ import { GoalStepModel } from '../../models/goal-step.model';
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { AuthService } from '../../../users/services/auth.service';
 import { GoalService } from '../../services/goal.service';
+import { AlertStatusMessageComponent } from '../../../shared/components/alert-status-message/alert-status-message.component';
 
 
 @Component({
@@ -25,7 +26,7 @@ import { GoalService } from '../../services/goal.service';
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
     provideNativeDateAdapter()
   ],
-  imports: [MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDatepickerModule, MatButtonModule, FormsModule, LottieComponent, HeaderComponent],
+  imports: [MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDatepickerModule, MatButtonModule, FormsModule, LottieComponent, HeaderComponent, AlertStatusMessageComponent],
   templateUrl: './goals-create.component.html',
   styleUrl: './goals-create.component.css'
 })
@@ -76,12 +77,7 @@ export class GoalsCreateComponent implements OnInit {
       .subscribe({
         next: () => {
           this.created = true;
-
-          setTimeout(() => {
-            this.goToGoalList();
-          }, 5000);
         },
-        error: error => console.log(error)
       })
   }
 

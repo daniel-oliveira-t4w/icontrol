@@ -1,0 +1,22 @@
+
+.container-goal-finished {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #20c02b1c;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.status-goal-finished{
+  /*padding: 5px; */
+  /* background: #028402d9; */
+  /* color: #fff; */
+  font-weight: bold;
+  /* border-radius: 10px; */
+  font-size: 12px;
+  letter-spacing: 1.5px;
+
+  border-bottom: 2px solid green;
+}

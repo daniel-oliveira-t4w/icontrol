@@ -1,3 +1,4 @@
+import { BackgroundMessageGoalFinishedComponent } from './../../components/background-message-goal-finished/background-message-goal-finished.component';
 import { Component, inject, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
@@ -13,12 +14,13 @@ import { HeaderComponent } from '../../../shared/components/header/header.compon
 import { AuthService } from '../../../users/services/auth.service';
 import { GoalService } from '../../services/goal.service';
 import { GoalModel } from '../../models/goal.model';
+import { CardGoalComponent } from '../../components/card-goal/card-goal.component';
 
 
 @Component({
   selector: 'app-goals-list',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatIconModule, MatProgressBarModule, AsyncPipe, LottieComponent, HeaderComponent],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, MatProgressBarModule, AsyncPipe, LottieComponent, HeaderComponent, CardGoalComponent],
   templateUrl: './goals-list.component.html',
   styleUrl: './goals-list.component.css'
 })

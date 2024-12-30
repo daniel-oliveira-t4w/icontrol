@@ -1,0 +1,18 @@
+@if(currentRouteHasMenu) {
+  <footer class="container-bottom-navigation">
+    <span routerLink="/goals" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleUnbounded]="false" class="block-item" #rla="routerLinkActive">
+      <mat-icon>sports_score</mat-icon>
+      <small class="text-item">Metas</small>
+    </span>
+
+    <span routerLink="/finances" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleUnbounded]="false" class="block-item">
+      <mat-icon>attach_money</mat-icon>
+      <small class="text-item">Finanças</small>
+    </span>
+
+    <span  routerLink="/configs" routerLinkActive="active" matRipple [matRippleCentered]="true" [matRippleUnbounded]="false" class="block-item">
+      <mat-icon>settings</mat-icon>
+      <small class="text-item">Config</small>
+    </span>
+  </footer>
+}

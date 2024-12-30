@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -11,19 +11,20 @@ import { provideHttpClient } from '@angular/common/http';
 
 import { provideCacheableAnimationLoader, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
+import { provideServiceWorker } from '@angular/service-worker';
 
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideFirebaseApp(() => initializeApp({
-      apiKey: "",
-      authDomain: "",
-      projectId: "",
-      storageBucket: "",
-      messagingSenderId: "",
-      appId: "",
-      measurementId: ""
+      apiKey: "AIzaSyBsNyDj4qRx8s5L-qed4yQZPCUE-f8omPE",
+      authDomain: "icontrol-51e57.firebaseapp.com",
+      projectId: "icontrol-51e57",
+      storageBucket: "icontrol-51e57.firebasestorage.app",
+      messagingSenderId: "381680824700",
+      appId: "1:381680824700:web:50cebb23e508cc90a174f9",
+      measurementId: "G-LPGFPESJ5Q"
     })),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
@@ -32,6 +33,9 @@ export const appConfig: ApplicationConfig = {
     provideCacheableAnimationLoader(),
     provideRouter(routes),
     provideHttpClient(),
-    provideAnimationsAsync(), provideAnimationsAsync()
+    provideAnimationsAsync(), provideAnimationsAsync(), provideServiceWorker('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            registrationStrategy: 'registerWhenStable:30000'
+          })
   ]
 };

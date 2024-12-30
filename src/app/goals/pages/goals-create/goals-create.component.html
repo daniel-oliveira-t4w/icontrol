@@ -7,11 +7,9 @@
   </app-header>
 
   @if(created) {
-    <ng-lottie
-      [height]="'200px'"
-      [options]="{path: '/animations/success.json', loop: false}"
-    />
-  } @else {
+    <app-alert-status-message [success]="true" [mileSecondsBeforeRedirect]="4000" (redirectTo)="goToGoalList()" [message]="'Meta criada com sucesso'"></app-alert-status-message>
+  }
+  @else {
     <form  class="container-create-goal" [formGroup]="formGoal">
       <mat-form-field class="w-100">
         <mat-label>Título</mat-label>
@@ -31,7 +29,7 @@
       </mat-form-field>
 
       <div class="step-goal">
-        <mat-form-field class="w-100 mr-1">
+        <mat-form-field class="w-100 mr-2">
           <mat-label>Etapas</mat-label>
           <input matInput [(ngModel)]="step" [ngModelOptions]="{standalone: true}">
         </mat-form-field>

@@ -2,11 +2,6 @@
   padding: 15px;
 }
 
-.title-goal {
-  display: flex;
-  align-items: center;
-}
-
 
 
 .container-no-goal {
@@ -24,13 +19,11 @@
   letter-spacing: 1px;
 }
 
-mat-icon {
-  margin-right: 5px;
-}
+
 
 .button-new-goal {
   position: fixed;
-  bottom: 1rem;
+  bottom: 4rem;
   right: 0.5rem;
 }
 
@@ -40,3 +33,4 @@ mat-icon {
   color: #333;
   font-weight: 500;
 }
+

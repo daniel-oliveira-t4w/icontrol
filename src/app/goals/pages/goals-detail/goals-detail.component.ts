@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -9,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 import { GoalModel } from '../../models/goal.model';
@@ -17,16 +19,19 @@ import { DialogConfirmActionComponent } from '../../../shared/components/dialog-
 import { HeaderComponent } from '../../../shared/components/header/header.component';
 import { GoalService } from '../../services/goal.service';
 import { GoalFinishedComponent } from '../../components/goal-finished/goal-finished.component';
+import { AlertStatusMessageComponent } from '../../../shared/components/alert-status-message/alert-status-message.component';
+import { ConvertToDatePipe } from '../../../shared/pipes/convert-to-date.pipe';
 
 @Component({
   selector: 'app-goals-detail',
   standalone: true,
-  imports: [MatTabsModule, MatIconModule, MatCheckboxModule, FormsModule, MatButtonModule, MatMenuModule, AllStepWereFinishedPipe, HeaderComponent, GoalFinishedComponent],
+  imports: [MatTabsModule, MatIconModule, MatCheckboxModule, FormsModule, MatButtonModule, MatMenuModule, AllStepWereFinishedPipe, HeaderComponent, GoalFinishedComponent, AlertStatusMessageComponent, ConvertToDatePipe, DatePipe, MatChipsModule],
   templateUrl: './goals-detail.component.html',
   styleUrl: './goals-detail.component.css'
 })
 export class GoalsDetailComponent implements OnInit {
   goal!: GoalModel | null;
+  goalWasFinished = false;
 
   router = inject(Router);
   activatedRoute = inject(ActivatedRoute);
@@ -70,12 +75,10 @@ export class GoalsDetailComponent implements OnInit {
     });
   }
 
-
-
   updateStep(): void {
     this.goalService.updateListStepGoal(this.goal!.listStep, this.goal!.id)
       .subscribe({
-        next: () => console.log('Atualizando')
+        next: () => this._snackBar.open('Requisito atualizado', ':)', { duration: 2000 })
       })
   }
 
@@ -88,7 +91,9 @@ export class GoalsDetailComponent implements OnInit {
       if (result) {
         this.goalService.finishGoal(this.goal!.id)
           .subscribe({
-            next: () => this._snackBar.open('Meta finalizada com sucesso!', '', { duration: 3000 })
+            next: () => {
+              this.goalWasFinished = true;
+            }
           });
       }
     });

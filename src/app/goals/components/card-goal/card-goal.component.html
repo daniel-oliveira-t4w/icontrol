@@ -1,0 +1,21 @@
+<mat-card (click)="navigateTo.emit()" class="" appearance="outlined"  matRipple [matRippleCentered]="true" [matRippleUnbounded]="false">
+  <mat-card-header>
+    <mat-card-title class="title-goal">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="sports_score"></mat-icon>
+      {{goal.title}}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="">
+    <p class="limit-large-text">{{goal.description}}</p>
+  </mat-card-content>
+
+  <mat-card-actions class="card-goal-action">
+    <mat-chip [class]="class">
+      <span class="card-status-goal">
+        <mat-icon class="">{{goal.finished ? 'check_circle' : 'schedule'}}</mat-icon>
+        <span class="card-status-text">{{goal.finished ? 'Concluída' : 'Em Andamento'}}</span>
+      </span>
+    </mat-chip>
+  </mat-card-actions>
+</mat-card>

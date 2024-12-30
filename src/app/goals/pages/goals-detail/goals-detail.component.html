@@ -1,7 +1,7 @@
 <section class="container-detail-goal">
   <app-header>
-    <span rightSide class="title-goal">
-      <mat-icon (click)="goToGoalList()"  class="example-tab-icon">arrow_back</mat-icon>
+    <span (click)="goToGoalList()" rightSide class="title-goal">
+      <mat-icon class="example-tab-icon">arrow_back</mat-icon>
       <span>Detalhes</span>
     </span>
 
@@ -38,6 +38,11 @@
           <h6 class="mb-1">{{goal.title}}</h6>
 
           <p>{{goal.description}}</p>
+
+          <mat-chip class="mt-1">
+            <small class="mr-1">Prazo para concluir:</small>
+            <strong>{{goal.completionDate | convertToDate | date:'dd/MM/YYYY'}}</strong>
+          </mat-chip>
         </div>
 
         @if(goal.finished) {
@@ -72,5 +77,9 @@
       }
     </mat-tab>
   </mat-tab-group>
+
+  @if(goalWasFinished) {
+    <app-alert-status-message [success]="true" (redirectTo)="goToGoalList()" [message]="'Meta foi finalizada com sucesso!!!'"></app-alert-status-message>
+  }
 
 </section>
