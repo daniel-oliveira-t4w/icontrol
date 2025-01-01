@@ -1,0 +1,20 @@
+<div class="list-item">
+  <span class="header-item">
+    <mat-icon class="icon-rounded">{{expense.category}}</mat-icon>
+
+    <span class="header-item-text ">
+      <strong class="text-limited">{{expense.name}}</strong>
+      <small>{{expense.date | convertToDate | date:'dd/MM/yyyy HH:mm'}}</small>
+    </span>
+  </span>
+
+  <footer>
+    <strong>{{expense.value | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</strong>
+    @if(expense.payed) {
+      <mat-icon class="expense-payed">check_circle</mat-icon>
+    }
+    @else {
+      <mat-icon class="expense-not-payed">hourglass_top</mat-icon>
+    }
+  </footer>
+</div>

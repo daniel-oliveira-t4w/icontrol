@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormsModule } 
 
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE} from '@angular/material/core';
@@ -23,10 +23,9 @@ import { AlertStatusMessageComponent } from '../../../shared/components/alert-st
   selector: 'app-goals-create',
   standalone: true,
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-    provideNativeDateAdapter()
+
   ],
-  imports: [MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDatepickerModule, MatButtonModule, FormsModule, LottieComponent, HeaderComponent, AlertStatusMessageComponent],
+  imports: [MatIconModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDatepickerModule, MatButtonModule, FormsModule, HeaderComponent, AlertStatusMessageComponent],
   templateUrl: './goals-create.component.html',
   styleUrl: './goals-create.component.css'
 })

@@ -1,0 +1,46 @@
+.list-item {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.header-item {
+  display: flex;
+}
+
+.header-item-text {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-item-text small, .card-total-expenses-info strong {
+  margin-top: -5px;
+}
+
+
+.text-limited {
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+  overflow: hidden;    /* Esconde o texto que ultrapassar os limites */
+  text-overflow: ellipsis; /* Adiciona os três pontinhos no final */
+  width: 175px; /* Define a largura do elemento */
+}
+
+.icon-rounded {
+  background: #eee;
+  border-radius: 50%;
+  /* font-size: 30px; */
+  padding: 9px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expense-payed {
+  color: #83d9ae;
+}

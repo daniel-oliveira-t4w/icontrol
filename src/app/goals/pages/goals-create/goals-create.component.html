@@ -1,4 +1,4 @@
-<section>
+<section class="container-create-goal">
   <app-header>
     <span rightSide (click)="goToGoalList()" class="title-goal">
       <mat-icon class="example-tab-icon">arrow_back</mat-icon>
@@ -10,28 +10,26 @@
     <app-alert-status-message [success]="true" [mileSecondsBeforeRedirect]="4000" (redirectTo)="goToGoalList()" [message]="'Meta criada com sucesso'"></app-alert-status-message>
   }
   @else {
-    <form  class="container-create-goal" [formGroup]="formGoal">
+    <form class="form-create-goal" [formGroup]="formGoal">
+      <h6 class="text-init-form">Sonhe. Planeje. Alcance. ✨</h6>
+
       <mat-form-field class="w-100">
-        <mat-label>Título</mat-label>
-        <input matInput formControlName="title">
+        <input matInput formControlName="title" placeholder="Email">
       </mat-form-field>
 
       <mat-form-field class="w-100">
-        <mat-label>Descrição</mat-label>
-        <textarea matInput formControlName="description"></textarea>
+        <textarea matInput formControlName="description" placeholder="Descrição"></textarea>
       </mat-form-field>
 
       <mat-form-field class="w-100" >
-        <mat-label>Data para Conclusão</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="completionDate">
+        <input matInput [matDatepicker]="picker" placeholder="Data para Conclusão" formControlName="completionDate">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <div class="step-goal">
         <mat-form-field class="w-100 mr-2">
-          <mat-label>Etapas</mat-label>
-          <input matInput [(ngModel)]="step" [ngModelOptions]="{standalone: true}">
+          <input matInput [(ngModel)]="step" placeholder="Etapas" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
 
         <button (click)="addStep()" mat-mini-fab aria-label="Example icon button with a menu icon">

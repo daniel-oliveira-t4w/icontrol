@@ -1,11 +1,29 @@
 .container-create-goal {
+  height: 100%;
+  background: #eee;
+
+}
+
+.form-create-goal {
   padding: 15px;
+  background: #fff;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.text-init-form {
+  font-size: 1.4rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 .title-goal {
   display: flex;
   align-items: center;
 }
+
+
 
 .example-tab-icon {
   margin-right: 8px;

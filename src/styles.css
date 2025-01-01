@@ -12,6 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .ml-1 {
   margin-left: 1rem !important;
 }
+
 .mr-1 {
   margin-right: .25rem !important;
 }
@@ -37,4 +38,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Corrigir bordas no mat-form-field outline */
+mat-form-field.appearance-outline .mat-form-field-outline {
+  border-width: 1px !important;
+  border-style: solid !important;
+}
+
+/* Garantir que não haja espaçamentos irregulares */
+mat-form-field .mat-form-field-outline-start,
+mat-form-field .mat-form-field-outline-end {
+  border-radius: 4px !important;
+}
+
+/* Ajuste do espaçamento para evitar quebras */
+mat-form-field.appearance-outline .mat-form-field-infix {
+  padding: 0.5em 0.75em !important;
 }

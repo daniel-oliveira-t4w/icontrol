@@ -1,1 +1,47 @@
-<p>expenses works!</p>
+<app-header [useDefaultHeader]="true" [useStyleDefault]="false"></app-header>
+
+
+<section class="container-expenses">
+  <h6 class=" mt-1">Despesas</h6>
+
+  <form class="mt-1">
+    <div class="card-year-month">
+      <mat-form-field class="month">
+        <mat-select (selectionChange)="getExpense()" [(ngModel)]="monthSelected" [ngModelOptions]="{standalone: true}">
+          @for (month of months; track month) {
+            <mat-option [value]="month">{{month}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="year">
+        <mat-select (selectionChange)="getExpense()" [(ngModel)]="yearSelected" [ngModelOptions]="{standalone: true}">
+          @for (year of years; track year) {
+            <mat-option [value]="year">{{year}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div class="card-total-expenses mt-1">
+    <mat-icon class="icon-rounded">attach_money</mat-icon>
+    <span class="card-total-expenses-info">
+      <small>Total</small>
+      <strong>R$ {{totalExpenses | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</strong>
+    </span>
+  </div>
+  <hr />
+
+  <mat-selection-list role="list">
+    @for (expense of expenses$ | async; track expense.id) {
+      <mat-list-item (click)="openExpenseDetail(expense)" role="listitem">
+        <app-card-expense [expense]="expense"></app-card-expense>
+      </mat-list-item>
+    }
+  </mat-selection-list>
+
+  <button (click)="addExpense()" class="button-new-expense" mat-fab aria-label="Example icon button with a heart icon">
+    <mat-icon>add</mat-icon>
+  </button>
+</section>

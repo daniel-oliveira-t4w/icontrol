@@ -1,0 +1,36 @@
+<section>
+  <h6>Detalhes da despesa</h6>
+
+  <div class="block-item mb-1">
+    <small>Nome:</small>
+    <strong class="mt-less-five">{{data.expense.name}}</strong>
+  </div>
+
+  <div style="display: flex; justify-content: space-between;" class="mb-1">
+    <div class="block-item mr-1">
+      <small>Valor:</small>
+      <strong class="mt-less-five ">{{data.expense.value | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</strong>
+    </div>
+
+    <div class="block-item">
+      <small>Data:</small>
+      <strong  class="mt-less-five">{{data.expense.date |convertToDate | date:'dd/MM/yyyy HH:mm'}}</strong>
+    </div>
+  </div>
+
+  <div class="block-item">
+    <mat-slide-toggle
+      color="primary"
+      class="example-margin"
+      [checked]="data.expense.payed"
+      (change)="updateExpenseStatus($event)">
+      Pago
+    </mat-slide-toggle>
+  </div>
+
+  <hr />
+
+  <div class="block-item mt-1" >
+    <button color="warn" mat-flat-button (click)="deleteExpense()">Excluir Despesa</button>
+  </div>
+</section>

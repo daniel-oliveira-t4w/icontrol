@@ -1,5 +1,6 @@
 .container-goals-list {
   padding: 15px;
+  margin-bottom: 150px;
 }
 
 
@@ -23,7 +24,7 @@
 
 .button-new-goal {
   position: fixed;
-  bottom: 4rem;
+  bottom: 4.5rem;
   right: 0.5rem;
 }
 

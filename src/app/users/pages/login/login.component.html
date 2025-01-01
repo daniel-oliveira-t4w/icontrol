@@ -1,15 +1,16 @@
 <section class="container-login">
   <ng-lottie
-    [height]="'200px'"
+    [height]="'150px'"
     [options]="{ path: '/animations/login.json'}"
   />
 
-  <h6 class="title-login">Alcance suas metas, controle suas finanças.</h6>
 
-  <form class="mt-1" [formGroup]="userLoginForm">
+  <form class="form-login mt-1" [formGroup]="userLoginForm">
+    <h6 class="title-login">Alcance suas metas, controle suas finanças.</h6>
+
+
     <mat-form-field class="w-100">
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+      <input type="email" matInput formControlName="email" placeholder="Email">
       @if (userLoginForm.get('email')?.hasError('email') && !userLoginForm.get('email')?.hasError('required')) {
         <mat-error>Informe um email Válido</mat-error>
       }
@@ -19,8 +20,7 @@
     </mat-form-field>
 
     <mat-form-field class="w-100">
-      <mat-label>Senha</mat-label>
-      <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" >
+      <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" placeholder="Senha">
       <mat-icon (click)="showPassword = !showPassword" matSuffix>{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
       @if (userLoginForm.get('password')?.hasError('required')) {
         <mat-error>Senha é <strong>obrigatório</strong></mat-error>

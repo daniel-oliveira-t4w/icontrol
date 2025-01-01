@@ -30,11 +30,11 @@ mat-card-actions {
 
 
 .card-status-finished {
-  background-color: #25ae25a6 !important;
+  background-color: #83d9ae !important;
 }
 
 .card-status-not-finished {
-  background-color: orange  !important;
+  background-color: #ffa5007a  !important;
 }
 
 .card-status-text {

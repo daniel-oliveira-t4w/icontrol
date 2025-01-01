@@ -6,11 +6,21 @@
   justify-content: center;
   max-width: 400px;
   margin: 0 auto;
+
+  background-color: #92aff6;
+}
+.form-login {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
 }
 
 .title-login {
-  font-weight: lighter;
-  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  font-weight: 900;
+  letter-spacing: inherit;
+  font-size: 18px;
 }
 
 .container-new-account {

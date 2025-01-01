@@ -1,10 +1,21 @@
 .container-register {
-  padding: 15px;
+  padding: 0 15px;
+  height: 100%;
+  background-color: #92aff6;
+}
+
+.form-register {
+  background: #fff;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .title-create{
-  font-weight: lighter;
-  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  font-weight: 900;
+  letter-spacing: inherit;
+  font-size: 18px;
 }
 
 .container-action-login{

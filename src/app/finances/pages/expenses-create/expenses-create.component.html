@@ -1,0 +1,44 @@
+<section class="container-create-expense">
+  <app-header>
+    <span rightSide (click)="goToExpenseList()" class="title-expense">
+      <mat-icon class="example-tab-icon">arrow_back</mat-icon>
+      Nova Despesa
+    </span>
+  </app-header>
+
+  <form class="form-create-expense" [formGroup]="expenseForm">
+    <h6 class="text-init-form mb-1">Insira uma despesa</h6>
+
+    <mat-form-field class="w-100">
+      <input matInput formControlName="name" placeholder="Nome">
+    </mat-form-field>
+
+    <mat-form-field class="input-value w-100" floatLabel="always">
+      <input matInput formControlName="value" type="number" class="example-right-align" placeholder="Valor" />
+      <span matTextPrefix>R$&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Data</mat-label>
+      <input formControlName="date" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="category">
+        @for (category of ['home', 'credit_card', 'checkroom', 'school', 'restaurant', 'local_hospital', 'more_horiz']; track category) {
+          <mat-option [value]="category">
+            <mat-icon>{{category}}</mat-icon>
+            {{category}}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="payed">Pago</mat-slide-toggle>
+
+    <button [disabled]="expenseForm.invalid" (click)="createExpense()" class="w-100 mt-1" mat-flat-button>Criar Despesa</button>
+  </form>
+</section>

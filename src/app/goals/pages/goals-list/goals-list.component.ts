@@ -37,7 +37,6 @@ export class GoalsListComponent implements OnInit {
       .pipe(
         tap(x => {
           this.goalsNoRegistered = x.length === 0;
-          console.log(x)
         })
       );
   }

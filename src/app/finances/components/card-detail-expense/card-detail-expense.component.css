@@ -1,0 +1,26 @@
+.block-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #666;
+}
+
+.mt-less-five {
+  margin-top: -5px;
+}
+
+.value-item {
+  margin-right: 30px !important;
+}
+
+.payed-status {
+  background-color: #83d9ae !important;
+}
+
+.not-payed-status {
+}
+
+.expense-status-text {
+  color: #333;
+  font-weight: 500;
+}

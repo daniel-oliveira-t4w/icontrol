@@ -1,0 +1,53 @@
+.container-expenses {
+  padding: 0 15px;
+}
+
+.card-year-month {
+  display: flex;
+}
+
+.month {
+  flex: 2;
+  margin-right: 10px;
+}
+
+.year {
+  flex: 1;
+}
+
+.icon-rounded {
+  background: #eee;
+  border-radius: 50%;
+  /* font-size: 30px; */
+  padding: 9px;
+}
+
+.card-total-expenses {
+  display: flex  ;
+  align-items: center;
+}
+
+.card-total-expenses-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+mat-selection-list {
+  background-color: #fff;
+}
+
+mat-list-item {
+  margin: 15px 0;
+  padding: 0;
+}
+
+
+
+.button-new-expense {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 0.5rem;
+}
+
+

@@ -3,6 +3,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 10px;
+
+}
+
+.style-default {
+  background: #92aff6;
+  color: #fff;
 }
 
 .title-goal {
